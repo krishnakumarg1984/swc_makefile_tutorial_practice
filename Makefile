@@ -6,6 +6,9 @@
 results.txt : testzipf.py isles.dat abyss.dat last.dat
 	python $< *.dat > $@
 
+.PHONY: dats
+dats: isles.dat abyss.dat last.dat
+
 # Count words.
 %.dat : books/%.txt countwords.py
 	python countwords.py $< $@
