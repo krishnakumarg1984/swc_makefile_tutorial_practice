@@ -7,13 +7,13 @@ results.txt : isles.dat abyss.dat last.dat
 	python testzipf.py $^ > $@
 
 # Count words.
-isles.dat : books/isles.txt
+isles.dat : books/isles.txt countwords.py
 	python countwords.py $< $@
 
-abyss.dat : books/abyss.txt
+abyss.dat : books/abyss.txt countwords.py
 	python countwords.py $< $@
 
-last.dat : books/last.txt
+last.dat : books/last.txt countwords.py
 	python countwords.py $< $@
 
 .PHONY: clean
