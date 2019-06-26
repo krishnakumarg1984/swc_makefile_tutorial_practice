@@ -17,4 +17,6 @@ dats: isles.dat abyss.dat last.dat
 
 .PHONY: clean
 clean:
-	rm -f *.dat results.txt
+	rm -f *.dat
+	rm -f results.txt
+	rm -f callgrind*
