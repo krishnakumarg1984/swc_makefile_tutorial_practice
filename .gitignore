@@ -1,0 +1,7 @@
+__pycache__/*
+callgrind.*
+*.png
+tags
+*.dat
+*.md
+results.txt
