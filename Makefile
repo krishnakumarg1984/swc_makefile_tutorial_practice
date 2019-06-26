@@ -1,18 +1,20 @@
-# Generate summary table
 # $^ = dependencies of current rule
 # $@ = target of current rule
+# $< = first dependency of current rule
+
+# Generate summary table
 results.txt : isles.dat abyss.dat last.dat
 	python testzipf.py $^ > $@
 
 # Count words.
 isles.dat : books/isles.txt
-	python countwords.py books/isles.txt isles.dat
+	python countwords.py $< $@
 
 abyss.dat : books/abyss.txt
-	python countwords.py books/abyss.txt abyss.dat
+	python countwords.py $< $@
 
 last.dat : books/last.txt
-	python countwords.py books/last.txt last.dat
+	python countwords.py $< $@
 
 .PHONY: clean
 clean:
