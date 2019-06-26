@@ -3,7 +3,7 @@
 # $< = first dependency of current rule
 
 # Generate summary table
-results.txt : isles.dat abyss.dat last.dat
+results.txt : isles.dat abyss.dat last.dat testzipf.py
 	python testzipf.py $^ > $@
 
 # Count words.
