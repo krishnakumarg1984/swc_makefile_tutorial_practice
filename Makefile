@@ -1,6 +1,8 @@
 # $^ = dependencies of current rule
 # $@ = target of current rule
 # $< = first dependency of current rule
+# % = pattern rule (only allowed in targets & dependencies, not in actions)
+# $* = Wildcard (in actions) to replace the stem with which the rule matched
 
 # Generate summary table
 results.txt : testzipf.py isles.dat abyss.dat last.dat
