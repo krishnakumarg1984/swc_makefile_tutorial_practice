@@ -18,7 +18,7 @@ $(ZIPF_ARCHIVE) : $(ZIPF_DIR)
 	tar -czf $@ $(ZIPF_DIR)
 
 $(ZIPF_DIR) : makefile config.mk  $(PNG_FILES) $(RESULTS_FILE) $(DAT_FILES) $(COUNT_SRC) $(ZIPF_SRC) $(PLOT_SRC) $(TXT_FILES)
-	mkdir $@
+	mkdir -p $@
 	cp --parents $^ $@
 
 ## $(RESULTS_FILE) : Generate Zipf summary table.
