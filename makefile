@@ -25,8 +25,14 @@ dats: $(DAT_FILES)
 .PHONY: pngs
 pngs: $(PNG_FILES)
 
-%.png : %.dat $(COUNT_SRC)
-	$(COUNT_EXE) $< $@
+%.png : %.dat $(PLOT_SRC)
+	$(PLOT_EXE) $< $@
+
+## zipf_analysis.tar.gz : create an archive of the data, code and results.
+zipf_analysis.tar.gz : $(COUNT_SRC) $(ZIPF_SRC) $(TXT_FILES) $(DAT_FILES) $(PNG_FILES) results.txt
+	mkdir zipf_analysis
+	cp -r $^ zipf_analysis/
+	tar -czf $@ zipf_analysis
 
 ## clean : Remove auto-generated files.
 .PHONY: clean
