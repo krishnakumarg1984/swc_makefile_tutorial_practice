@@ -10,6 +10,9 @@
 
 include config.mk
 
+.PHONY: all
+all: results.txt $(PNG_FILES) zipf_analysis.tar.gz
+
 ## results.txt : Generate Zipf summary table.
 results.txt : $(ZIPF_SRC) $(DAT_FILES)
 	$(ZIPF_EXE) $(DAT_FILES) > $@
@@ -31,23 +34,34 @@ pngs: $(PNG_FILES)
 ## zipf_analysis.tar.gz : create an archive of the data, code and results.
 zipf_analysis.tar.gz : $(COUNT_SRC) $(ZIPF_SRC) $(TXT_FILES) $(DAT_FILES) $(PNG_FILES) results.txt
 	mkdir zipf_analysis
-	cp -r $^ zipf_analysis/
+	cp --parents $^ zipf_analysis/
 	tar -czf $@ zipf_analysis
 
 ## clean : Remove auto-generated files.
 .PHONY: clean
 clean:
+	rm -rf zipf_analysis*
 	rm -f results.txt
 	rm -f $(PNG_FILES)
 	rm -f $(DAT_FILES)
 	rm -f callgrind*
 
-## variables : Print variables.
+## variables : Print variables used in the makefile
 .PHONY : variables
 variables:
+	@echo LANGUAGE: $(LANGUAGE)
+	@echo COUNT_SRC: $(COUNT_SRC)
+	@echo ZIPF_SRC: $(ZIPF_SRC)
+	@echo PLOT_SRC: $(PLOT_SRC)
 	@echo TXT_FILES: $(TXT_FILES)
 	@echo DAT_FILES: $(DAT_FILES)
 	@echo PNG_FILES: $(PNG_FILES)
+	@echo ZIPF_EXE: $(ZIPF_EXE)
+	@echo COUNT_EXE: $(COUNT_EXE)
+	@echo PLOT_EXE: $(PLOT_EXE)
+
+
+
 
 .PHONY : help
 help : makefile
