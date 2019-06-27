@@ -10,10 +10,6 @@
 
 include config.mk
 
-TXT_FILES=$(wildcard books/*.txt)
-DAT_FILES=$(patsubst books/%.txt, %.dat, $(TXT_FILES))
-PNG_FILES=$(patsubst %.dat, %.png, $(DAT_FILES))
-
 ## results.txt : Generate Zipf summary table.
 results.txt : $(ZIPF_SRC) $(DAT_FILES)
 	$(ZIPF_EXE) $(DAT_FILES) > $@
