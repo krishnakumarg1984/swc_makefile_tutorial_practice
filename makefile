@@ -10,18 +10,26 @@
 
 include config.mk
 
+## all : Generate archive of code, data, plots, summary table, makefile, and config.mk.
 .PHONY: all
-all: results.txt $(PNG_FILES) zipf_analysis.tar.gz
+all: $(ZIPF_ARCHIVE)
 
-## results.txt : Generate Zipf summary table.
-results.txt : $(ZIPF_SRC) $(DAT_FILES)
+$(ZIPF_ARCHIVE) : $(ZIPF_DIR)
+	tar -czf $@ $(ZIPF_DIR)
+
+$(ZIPF_DIR) : makefile config.mk  $(PNG_FILES) $(RESULTS_FILE) $(DAT_FILES) $(COUNT_SRC) $(ZIPF_SRC) $(PLOT_SRC) $(TXT_FILES)
+	mkdir $@
+	cp --parents $^ $@
+
+## $(RESULTS_FILE) : Generate Zipf summary table.
+$(RESULTS_FILE) : $(ZIPF_SRC) $(DAT_FILES)
 	$(ZIPF_EXE) $(DAT_FILES) > $@
 
 ## dats : Count words in text files.
 .PHONY: dats
 dats: $(DAT_FILES)
 
-%.dat : books/%.txt $(COUNT_SRC)
+%.dat : $(TXT_DIR)/%.txt $(COUNT_SRC)
 	$(COUNT_EXE) $< $@
 
 ## pngs : Generate image files depicting word count (from corresponding dat files)
@@ -31,17 +39,12 @@ pngs: $(PNG_FILES)
 %.png : %.dat $(PLOT_SRC)
 	$(PLOT_EXE) $< $@
 
-## zipf_analysis.tar.gz : create an archive of the data, code and results.
-zipf_analysis.tar.gz : $(COUNT_SRC) $(ZIPF_SRC) $(TXT_FILES) $(DAT_FILES) $(PNG_FILES) results.txt
-	mkdir zipf_analysis
-	cp --parents $^ zipf_analysis/
-	tar -czf $@ zipf_analysis
-
 ## clean : Remove auto-generated files.
 .PHONY: clean
 clean:
-	rm -rf zipf_analysis*
-	rm -f results.txt
+	rm -rf $(ZIPF_DIR)
+	rm -rf $(ZIPF_ARCHIVE)
+	rm -f $(RESULTS_FILE)
 	rm -f $(PNG_FILES)
 	rm -f $(DAT_FILES)
 	rm -f callgrind*
@@ -59,9 +62,10 @@ variables:
 	@echo ZIPF_EXE: $(ZIPF_EXE)
 	@echo COUNT_EXE: $(COUNT_EXE)
 	@echo PLOT_EXE: $(PLOT_EXE)
-
-
-
+	@echo TXT_DIR: $(TXT_DIR)
+	@echo RESULTS_FILE: $(RESULTS_FILE)
+	@echo ZIPF_DIR: $(ZIPF_DIR)
+	@echo ZIPF_ARCHIVE: $(ZIPF_ARCHIVE)
 
 .PHONY : help
 help : makefile
