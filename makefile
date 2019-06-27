@@ -12,30 +12,40 @@ include config.mk
 
 TXT_FILES=$(wildcard books/*.txt)
 DAT_FILES=$(patsubst books/%.txt, %.dat, $(TXT_FILES))
+PNG_FILES=$(patsubst %.dat, %.png, $(DAT_FILES))
 
 ## results.txt : Generate Zipf summary table.
 results.txt : $(ZIPF_SRC) $(DAT_FILES)
 	$(ZIPF_EXE) $(DAT_FILES) > $@
 
-## dats        : Count words in text files.
+## dats : Count words in text files.
 .PHONY: dats
 dats: $(DAT_FILES)
 
 %.dat : books/%.txt $(COUNT_SRC)
 	$(COUNT_EXE) $< $@
 
-## clean       : Remove auto-generated files.
+## pngs : Generate image files depicting word count (from corresponding dat files)
+.PHONY: pngs
+
+pngs:
+%.png : %.dat $(COUNT_SRC)
+	$(COUNT_EXE) $< $@
+
+## clean : Remove auto-generated files.
 .PHONY: clean
 clean:
-	rm -f $(DAT_FILES)
 	rm -f results.txt
+	rm -f $(PNG_FILES)
+	rm -f $(DAT_FILES)
 	rm -f callgrind*
 
-## variables   : Print variables.
+## variables : Print variables.
 .PHONY : variables
 variables:
 	@echo TXT_FILES: $(TXT_FILES)
 	@echo DAT_FILES: $(DAT_FILES)
+	@echo PNG_FILES: $(PNG_FILES)
 
 .PHONY : help
 help : makefile
