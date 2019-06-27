@@ -20,6 +20,7 @@ $(ZIPF_ARCHIVE) : $(ZIPF_DIR)
 $(ZIPF_DIR) : makefile config.mk  $(PNG_FILES) $(RESULTS_FILE) $(DAT_FILES) $(COUNT_SRC) $(ZIPF_SRC) $(PLOT_SRC) $(TXT_FILES)
 	mkdir -p $@
 	cp --parents $^ $@
+	touch $@
 
 ## $(RESULTS_FILE) : Generate Zipf summary table.
 $(RESULTS_FILE) : $(ZIPF_SRC) $(DAT_FILES)
