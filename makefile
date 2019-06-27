@@ -43,7 +43,7 @@ pngs: $(PNG_FILES)
 .PHONY: clean
 clean:
 	rm -rf $(ZIPF_DIR)
-	rm -rf $(ZIPF_ARCHIVE)
+	rm -f $(ZIPF_ARCHIVE)
 	rm -f $(RESULTS_FILE)
 	rm -f $(PNG_FILES)
 	rm -f $(DAT_FILES)
