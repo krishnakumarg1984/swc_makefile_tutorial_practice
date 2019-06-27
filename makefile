@@ -27,8 +27,8 @@ dats: $(DAT_FILES)
 
 ## pngs : Generate image files depicting word count (from corresponding dat files)
 .PHONY: pngs
+pngs: $(PNG_FILES)
 
-pngs:
 %.png : %.dat $(COUNT_SRC)
 	$(COUNT_EXE) $< $@
 
