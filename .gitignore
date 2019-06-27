@@ -5,3 +5,5 @@ tags
 *.dat
 *.md
 results.txt
+zipf_analysis/
+*.tar.gz
