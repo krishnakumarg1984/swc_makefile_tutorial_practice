@@ -1,4 +1,4 @@
-#!/usr/bin/env awk
+#!/usr/bin/env gawk
 
 {
     if (NF == 2 && $1 == "include") {
