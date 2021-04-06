@@ -22,11 +22,15 @@ dats: isles.dat abyss.dat last.dat
 # 	# python countwords.py books/last.txt last.dat
 # 	python countwords.py $< $@
 
+COUNT_SRC=countwords.py
+LANGUAGE=python
+COUNT_EXE=$(LANGUAGE) $(COUNT_SRC)
 
 # The % wildcard can only be used in targets and dependencies. Not in actions
-%.dat : books/%.txt countwords.py
+%.dat : books/%.txt $(COUNT_SRC)
 	# python countwords.py $< $*.dat
-	python countwords.py $< $@
+	# python countwords.py $< $@
+	$(COUNT_EXE) $< $@
 
 # clean :
 # 	rm -f *.dat
