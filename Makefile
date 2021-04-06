@@ -23,8 +23,10 @@ dats: isles.dat abyss.dat last.dat
 # 	python countwords.py $< $@
 
 
+# The % wildcard can only be used in targets and dependencies. Not in actions
 %.dat : books/%.txt countwords.py
-	python countwords.py $< $*.dat
+	# python countwords.py $< $*.dat
+	python countwords.py $< $@
 
 # clean :
 # 	rm -f *.dat
