@@ -21,4 +21,4 @@ last.dat : books/last.txt
 
 .PHONY : clean
 clean:
-	rm -f *.dat
+	rm -f *.dat results.txt
