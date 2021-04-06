@@ -3,7 +3,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import sys
-from collections import Sequence
+try:
+    from collections.abc import Sequence
+except ImportError:
+    from collections import Sequence
 
 from countwords import load_word_counts
 
@@ -17,7 +20,7 @@ def plot_word_counts(counts, limit=10):
     word_data = [word for (word, _, _) in limited_counts]
     count_data = [count for (_, count, _) in limited_counts]
     position = np.arange(len(word_data))
-    width = 0.8
+    width = 1.0
     ax = plt.axes()
     ax.set_xticks(position)
     ax.set_xticklabels(word_data)
