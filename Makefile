@@ -10,18 +10,21 @@ results.txt : testzipf.py abyss.dat isles.dat last.dat
 .PHONY : dats
 dats: isles.dat abyss.dat last.dat
 
-isles.dat : books/isles.txt countwords.py
-	# python countwords.py books/isles.txt isles.dat
-	python countwords.py $< $@
+# isles.dat : books/isles.txt countwords.py
+# 	# python countwords.py books/isles.txt isles.dat
+# 	python countwords.py $< $@
+#
+# abyss.dat : books/abyss.txt countwords.py
+# 	# python countwords.py books/abyss.txt abyss.dat
+# 	python countwords.py $< $@
+#
+# last.dat : books/last.txt countwords.py
+# 	# python countwords.py books/last.txt last.dat
+# 	python countwords.py $< $@
 
-abyss.dat : books/abyss.txt countwords.py
-	# python countwords.py books/abyss.txt abyss.dat
-	python countwords.py $< $@
 
-last.dat : books/last.txt countwords.py
-	# python countwords.py books/last.txt last.dat
-	python countwords.py $< $@
-
+%.dat : books/%.txt countwords.py
+	python countwords.py $< $*.dat
 
 # clean :
 # 	rm -f *.dat
