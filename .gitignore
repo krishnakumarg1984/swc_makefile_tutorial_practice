@@ -7,3 +7,4 @@ tags
 results.txt
 zipf_analysis/
 *.tar.gz
+.Makefile.targets
