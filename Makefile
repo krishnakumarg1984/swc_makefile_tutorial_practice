@@ -8,14 +8,17 @@ results.txt : abyss.dat isles.dat last.dat
 .PHONY : dats
 dats: isles.dat abyss.dat last.dat
 
-isles.dat : books/isles.txt
-	python countwords.py books/isles.txt isles.dat
+isles.dat : books/isles.txt countwords.py
+	# python countwords.py books/isles.txt isles.dat
+	python countwords.py $< $@
 
-abyss.dat : books/abyss.txt
-	python countwords.py books/abyss.txt abyss.dat
+abyss.dat : books/abyss.txt countwords.py
+	# python countwords.py books/abyss.txt abyss.dat
+	python countwords.py $< $@
 
-last.dat : books/last.txt
-	python countwords.py books/last.txt last.dat
+last.dat : books/last.txt countwords.py
+	# python countwords.py books/last.txt last.dat
+	python countwords.py $< $@
 
 
 # clean :
