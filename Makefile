@@ -14,6 +14,10 @@ include config.mk
 results.txt : $(ZIPF_SRC) abyss.dat isles.dat last.dat
 	$(ZIPF_EXE) *.dat > $@
 
+.PHONY : variables
+variables:
+	@echo TXT_FILES : $(TXT_FILES)
+
 
 # Count words.
 .PHONY : dats
