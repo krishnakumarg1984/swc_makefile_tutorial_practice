@@ -3,8 +3,15 @@
 	# python testzipf.py abyss.dat isles.dat last.dat > results.txt
 	# python testzipf.py abyss.dat isles.dat last.dat > $@
 	# python testzipf.py $^ > $@
-results.txt : testzipf.py abyss.dat isles.dat last.dat
-	python $< *.dat > $@
+# results.txt : testzipf.py abyss.dat isles.dat last.dat
+# 	python $< *.dat > $@
+
+ZIPF_SRC=testzipf.py
+ZIPF_EXE=$(LANGUAGE) $(ZIPF_SRC)
+
+results.txt : $(ZIPF_SRC) abyss.dat isles.dat last.dat
+	$(ZIPF_EXE) *.dat > $@
+
 
 # Count words.
 .PHONY : dats
