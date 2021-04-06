@@ -6,8 +6,10 @@
 # results.txt : testzipf.py abyss.dat isles.dat last.dat
 # 	python $< *.dat > $@
 
-ZIPF_SRC=testzipf.py
-ZIPF_EXE=$(LANGUAGE) $(ZIPF_SRC)
+# ZIPF_SRC=testzipf.py
+# ZIPF_EXE=$(LANGUAGE) $(ZIPF_SRC)
+
+include config.mk
 
 results.txt : $(ZIPF_SRC) abyss.dat isles.dat last.dat
 	$(ZIPF_EXE) *.dat > $@
@@ -29,9 +31,9 @@ dats: isles.dat abyss.dat last.dat
 # 	# python countwords.py books/last.txt last.dat
 # 	python countwords.py $< $@
 
-COUNT_SRC=countwords.py
-LANGUAGE=python
-COUNT_EXE=$(LANGUAGE) $(COUNT_SRC)
+# COUNT_SRC=countwords.py
+# LANGUAGE=python
+# COUNT_EXE=$(LANGUAGE) $(COUNT_SRC)
 
 # The % wildcard can only be used in targets and dependencies. Not in actions
 %.dat : books/%.txt $(COUNT_SRC)
