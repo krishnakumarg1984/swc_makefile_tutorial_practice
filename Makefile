@@ -11,9 +11,14 @@ abyss.dat : books/abyss.txt
 last.dat : books/last.txt
 	python countwords.py books/last.txt last.dat
 
+
+# Summary table
+results.txt : dats
+	python testzipf.py abyss.dat isles.dat last.dat > results.txt
+
 # clean :
 # 	rm -f *.dat
 
 .PHONY : clean
 clean:
-	rm -rf *.dat
+	rm -f *.dat
