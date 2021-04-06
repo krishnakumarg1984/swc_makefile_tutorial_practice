@@ -17,6 +17,7 @@ results.txt : $(ZIPF_SRC) abyss.dat isles.dat last.dat
 .PHONY : variables
 variables:
 	@echo TXT_FILES : $(TXT_FILES)
+	@echo DAT_FILES : $(DAT_FILES)
 
 
 # Count words.

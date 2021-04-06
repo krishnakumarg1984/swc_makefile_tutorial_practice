@@ -12,7 +12,7 @@ ZIPF_EXE=$(LANGUAGE) $(ZIPF_SRC)
 
 TXT_DIR=books
 TXT_FILES=$(wildcard $(TXT_DIR)/*.txt)
-# DAT_FILES=$(patsubst $(TXT_DIR)/%.txt, %.dat, $(TXT_FILES))
+DAT_FILES=$(patsubst $(TXT_DIR)/%.txt, %.dat, $(TXT_FILES))
 # PNG_FILES=$(patsubst %.dat, %.png, $(DAT_FILES))
 # RESULTS_FILE=results.txt
 # ZIPF_DIR=zipf_analysis
