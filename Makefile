@@ -11,6 +11,9 @@
 
 include config.mk
 
+.PHONY : all
+all : results.txt $(PNG_FILES)
+
 # results.txt : $(ZIPF_SRC) abyss.dat isles.dat last.dat
 	# $(ZIPF_EXE) *.dat > $@
 
@@ -25,11 +28,18 @@ variables:
 	@echo DAT_FILES : $(DAT_FILES)
 
 
-# Count words.
 ## dats        : Count words in text files.
 .PHONY : dats
 # dats: isles.dat abyss.dat last.dat
 dats: $(DAT_FILES)
+
+## pngs        : Plot the histograms of top word counts from dat files
+.PHONY : pngs
+pngs: $(PNG_FILES)
+
+%.png : %.dat
+	$(PLOT_EXE) $< $@
+
 
 # isles.dat : books/isles.txt countwords.py
 # 	# python countwords.py books/isles.txt isles.dat
@@ -59,7 +69,7 @@ dats: $(DAT_FILES)
 ## clean       : Remove auto-generated files.
 .PHONY : clean
 clean:
-	rm -f *.dat results.txt
+	rm -f *.dat results.txt *.png
 
 
 # .PHONY : help
