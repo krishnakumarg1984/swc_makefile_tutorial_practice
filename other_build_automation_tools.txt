@@ -1,3 +1,5 @@
+> vim: nospell
+
 https://github.com/xmake-io/xmake (https://xmake.io/#/)
 Bazel. See also https://github.com/jin/awesome-bazel
 plz.build
@@ -12,24 +14,31 @@ https://github.com/SanderMertens/bake
 
 Task Automation
 ---------------
-Aiida https://aiida.readthedocs.io/projects/aiida-core/en/latest/
-Dask https://docs.dask.org/en/latest/
-DoIt https://pydoit.org/
-ehive https://ensembl-hive.readthedocs.io/en/version-2.5/
-Flowr https://flow-r.github.io/flowr/
-GoTask https://github.com/go-task/task
 https://github.com/pditommaso/awesome-pipeline
-Jug https://jug.readthedocs.io/en/latest/
-Luigi https://github.com/spotify/luigi
-Maid https://github.com/egoist/maid
-Mask https://github.com/jakedeichert/mask
-Pypyr https://pypyr.io/docs/
-Sake https://tonyfischetti.github.io/sake/
+
+IMHO, easiest jump from Make
+----------------------------
+DoIt       https://pydoit.org/
+Maestro    https://maestrowf.readthedocs.io/en/latest/
+Nextflow   https://www.nextflow.io
+Pypyr      https://pypyr.io/docs/                        (good; I think)
+Sake       https://tonyfischetti.github.io/sake/
+Scipipe    https://scipipe.org/                          (Good. But pipeline to be written in GOLANG)
+SnakeMake  https://snakemake.readthedocs.io/en/stable/   (Seems to be the best bet for now)
+Targets    https://books.ropensci.org/targets/index.html (is an R package)
+
+
+Aiida    https://aiida.readthedocs.io/projects/aiida-core/en/latest/ (too complex?)
+Dask     https://docs.dask.org/en/latest/ (relevant?)
+ehive    https://ensembl-hive.readthedocs.io/en/version-2.5/ (Unsure)
+Flowr    https://flow-r.github.io/flowr/ (hmm. R-package. Old?)
+GoTask   https://github.com/go-task/task (relevant?)
+Jug      https://jug.readthedocs.io/en/latest/
+Luigi    https://github.com/spotify/luigi
+Maid     https://github.com/egoist/maid
+Mask     https://github.com/jakedeichert/mask
 SciLuigi https://github.com/pharmbio/sciluigi
-Scipipe https://scipipe.org/
-SnakeMake https://snakemake.readthedocs.io/en/stable/
-Targets https://books.ropensci.org/targets/index.html
-Taskctl https://github.com/taskctl/taskctl
+Taskctl  https://github.com/taskctl/taskctl
 
 HPC Computational Analysis Pipeline (mixed with above. Not strict separation in my notes here)
 -----------------------------------
