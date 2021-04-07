@@ -10,3 +10,4 @@ zipf_analysis/
 .Makefile.targets
 !Makefile
 *.bam
+*.svg
