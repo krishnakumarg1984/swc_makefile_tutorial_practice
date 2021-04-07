@@ -1,0 +1,52 @@
+https://github.com/xmake-io/xmake (https://xmake.io/#/)
+Bazel. See also https://github.com/jin/awesome-bazel
+plz.build
+https://github.com/chen3feng/blade-build
+https://github.com/deplinenoise/tundra
+https://github.com/multiarch/crossbuild
+
+C++
+---
+https://floooh.github.io/fips/
+https://github.com/SanderMertens/bake
+
+Task Automation
+---------------
+Aiida https://aiida.readthedocs.io/projects/aiida-core/en/latest/
+Dask https://docs.dask.org/en/latest/
+DoIt https://pydoit.org/
+ehive https://ensembl-hive.readthedocs.io/en/version-2.5/
+Flowr https://flow-r.github.io/flowr/
+GoTask https://github.com/go-task/task
+https://github.com/pditommaso/awesome-pipeline
+Jug https://jug.readthedocs.io/en/latest/
+Luigi https://github.com/spotify/luigi
+Maid https://github.com/egoist/maid
+Mask https://github.com/jakedeichert/mask
+Pypyr https://pypyr.io/docs/
+Sake https://tonyfischetti.github.io/sake/
+SciLuigi https://github.com/pharmbio/sciluigi
+Scipipe https://scipipe.org/
+SnakeMake https://snakemake.readthedocs.io/en/stable/
+Targets https://books.ropensci.org/targets/index.html
+Taskctl https://github.com/taskctl/taskctl
+
+HPC Computational Analysis Pipeline (mixed with above. Not strict separation in my notes here)
+-----------------------------------
+https://martian-lang.org/
+https://ccl.cse.nd.edu/software/makeflow/
+https://maestrowf.readthedocs.io/en/latest/
+https://github.com/argonne-lcf/balsam
+
+Data Analysis Pipeline
+----------------------
+https://kedro.readthedocs.io/en/stable/
+
+https://github.com/datajoint/datajoint-python
+https://cromwell.readthedocs.io/en/stable/
+https://docs.metaflow.org/
+
+Make-extension/improved make
+----------------------------
+https://github.com/tj/mmake
+https://github.com/apenwarr/redo (might be slow; written in python)
