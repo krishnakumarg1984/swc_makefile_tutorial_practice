@@ -55,7 +55,6 @@ local_vimrc_has_run = 1 -- silly workaround to stop local '.vimrc.lua' from bein
 -- formatting.taplo,
 -- diagnostics.actionlint,
 -- diagnostics.ansiblelint,
--- diagnostics.checkmake,
 -- diagnostics.chktex,
 -- diagnostics.codespell,
 -- diagnostics.cspell,  -- requires 'npm'
