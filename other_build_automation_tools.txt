@@ -2,10 +2,12 @@
 
 https://github.com/xmake-io/xmake (https://xmake.io/#/)
 Bazel. See also https://github.com/jin/awesome-bazel
-plz.build
+https://please.build/
 https://github.com/chen3feng/blade-build
 https://github.com/deplinenoise/tundra
 https://github.com/multiarch/crossbuild
+https://github.com/bkaradzic/GENie (like CMake)
+https://github.com/kennethreitz/bake
 
 C++
 ---
@@ -29,6 +31,7 @@ Targets    https://books.ropensci.org/targets/index.html (is an R package)
 
 
 Aiida    https://aiida.readthedocs.io/projects/aiida-core/en/latest/ (too complex?)
+Biomake  https://github.com/evoldoers/biomake
 Dask     https://docs.dask.org/en/latest/ (relevant?)
 ehive    https://ensembl-hive.readthedocs.io/en/version-2.5/ (Unsure)
 Flowr    https://flow-r.github.io/flowr/ (hmm. R-package. Old?)
@@ -39,6 +42,7 @@ Maid     https://github.com/egoist/maid
 Mask     https://github.com/jakedeichert/mask
 SciLuigi https://github.com/pharmbio/sciluigi
 Taskctl  https://github.com/taskctl/taskctl
+Taskfile https://taskfile.dev/
 
 HPC Computational Analysis Pipeline (mixed with above. Not strict separation in my notes here)
 -----------------------------------
@@ -58,4 +62,5 @@ https://docs.metaflow.org/
 Make-extension/improved make
 ----------------------------
 https://github.com/tj/mmake
-https://github.com/apenwarr/redo (might be slow; written in python)
+https://github.com/apenwarr/redo
+https://github.com/rocky/remake
