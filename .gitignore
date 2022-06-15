@@ -11,3 +11,4 @@ zipf_analysis/
 !Makefile
 *.bam
 *.svg
+!*.zip
