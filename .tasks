@@ -4,6 +4,15 @@
 name=Automation with Make
 description=compilation tasks file for software carpentry's 'Automation with Make' lesson
 
+[make]
+command=make
+mapping=m
+
+[make_verbose]
+command=make
+args="--debug=verbose"
+mapping=M
+
 [execute_shell_script]
 command:sh/linux=bash "%"
 mapping=x
