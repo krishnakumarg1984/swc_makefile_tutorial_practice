@@ -12,3 +12,5 @@ zipf_analysis/
 *.bam
 *.svg
 !*.zip
+!.root
+!.vimrc.lua

@@ -1,0 +1,10 @@
+# vim: ft=dosini:
+
+#project
+name=Automation with Make
+description=compilation tasks file for software carpentry's 'Automation with Make' lesson
+
+[execute_shell_script]
+command:sh/linux=bash "%"
+mapping=x
+output=terminal
