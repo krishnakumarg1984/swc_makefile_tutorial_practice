@@ -8,6 +8,7 @@ https://github.com/deplinenoise/tundra
 https://github.com/multiarch/crossbuild
 https://github.com/bkaradzic/GENie (like CMake)
 https://github.com/kennethreitz/bake
+https://gittup.org/tup/index.html
 
 C++
 ---
@@ -64,3 +65,4 @@ Make-extension/improved make
 https://github.com/tj/mmake
 https://github.com/apenwarr/redo
 https://github.com/rocky/remake
+https://github.com/rduplain/Makefile.d

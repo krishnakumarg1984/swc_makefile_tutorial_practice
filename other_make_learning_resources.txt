@@ -1,3 +1,5 @@
+https://the-turing-way.netlify.app/reproducible-research/make.html
+https://makefiletutorial.com/
+https://learnxinyminutes.com/docs/make/
+https://www.tutorialspoint.com/makefile/index.htm
 https://github.com/seanpm2001/Learn-Makefile
-https://github.com/rduplain/Makefile.d
-
