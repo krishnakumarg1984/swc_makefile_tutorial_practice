@@ -5,5 +5,6 @@ isles.dat : books/isles.txt
 abyss.dat : books/abyss.txt
 	python countwords.py books/abyss.txt abyss.dat
 
+.PHONY : clean
 clean :
 	rm -f *.dat
