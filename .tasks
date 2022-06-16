@@ -4,16 +4,28 @@
 name=Automation with Make
 description=compilation tasks file for software carpentry's 'Automation with Make' lesson
 
-[make]
-command=make
-mapping=m
-
-[make_verbose]
-command=make
-args="--debug=verbose"
-mapping=M
-
-[execute_shell_script]
-command:sh/linux=bash "%"
-mapping=x
-output=terminal
+; [make] @always
+; command=make
+; mapping=m
+; ifexists=Makefile,makefile
+;
+; [list_makefile_targets] @always
+; command=gmake -Bnd | make2graph --format L
+; mapping=l
+; ifexists=Makefile,makefile
+;
+; [view_makefile_dag] @always
+; command=conda activate condaenv_makefile2dot && makefile2dot -v
+; mapping=v
+; ifexists=Makefile,makefile
+;
+; [make_verbose] @always
+; command=make
+; args="--debug=verbose"
+; mapping=M
+; ifexists=Makefile,makefile
+;
+; [execute_shell_script] @always
+; command:sh/linux=bash "%"
+; mapping=x
+; output=terminal
