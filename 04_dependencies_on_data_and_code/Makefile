@@ -1,6 +1,6 @@
 # Generate summary table.
-results.txt : isles.dat abyss.dat last.dat
-	python testzipf.py $^ > $@
+results.txt : testzipf.py isles.dat abyss.dat last.dat
+	python $< *.dat > $@
 
 # Count words.
 .PHONY : dats
