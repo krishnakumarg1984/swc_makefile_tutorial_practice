@@ -1,7 +1,8 @@
-# Count words.
+# Generate summary table.
 results.txt : isles.dat abyss.dat last.dat
 	python testzipf.py isles.dat abyss.dat last.dat > results.txt
 
+# Count words.
 .PHONY : dats
 dats : isles.dat abyss.dat last.dat
 
