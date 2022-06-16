@@ -1,6 +1,6 @@
 # Count words.
 .PHONY : dats
-dats: isles.dat abyss.dat
+dats : isles.dat abyss.dat
 
 isles.dat : books/isles.txt
 	python countwords.py books/isles.txt isles.dat
