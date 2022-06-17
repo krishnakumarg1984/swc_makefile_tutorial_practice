@@ -6,13 +6,10 @@ results.txt : testzipf.py isles.dat abyss.dat last.dat
 .PHONY : dats
 dats : isles.dat abyss.dat last.dat
 
-isles.dat : books/isles.txt countwords.py
-	python countwords.py $< $@
-
-abyss.dat : books/abyss.txt countwords.py
-	python countwords.py $< $@
-
-last.dat : books/last.txt countwords.py
+# Build a .dat file from the corresponding .txt file in books/
+# “In order to build a file named [something].dat (i.e. the target), find a file named books/[that same something].txt (i.e. the dependency) and run countwords.py [the dependency] [the target].”
+# The Make % wildcard can only be used in a target and in its dependencies. It cannot be used in actions.
+%.dat : books/%.txt countwords.py
 	python countwords.py $< $@
 
 .PHONY : clean
