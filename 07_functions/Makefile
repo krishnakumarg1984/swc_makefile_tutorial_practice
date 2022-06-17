@@ -15,11 +15,10 @@ dats : $(DAT_FILES)
 %.dat : books/%.txt $(COUNT_SRC)
 	$(COUNT_EXE) $< $@
 
+.PHONY : clean
+clean :
+	rm -f $(DAT_FILES) results.txt
 .PHONY : variables
 variables:
 	@echo TXT_FILES: $(TXT_FILES)
 	@echo DAT_FILES: $(DAT_FILES)
-
-.PHONY : clean
-clean :
-	rm -f $(DAT_FILES) results.txt
