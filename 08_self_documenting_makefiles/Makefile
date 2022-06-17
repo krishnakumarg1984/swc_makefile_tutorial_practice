@@ -19,6 +19,7 @@ dats : $(DAT_FILES)
 .PHONY : clean
 clean :
 	rm -f $(DAT_FILES) results.txt
+	rm -f callgrind.out.*
 
 #: variables   : Print variables.
 .PHONY : variables
