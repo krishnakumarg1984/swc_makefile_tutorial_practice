@@ -11,7 +11,7 @@ variables:
 	@echo DAT_FILES: $(DAT_FILES)
 
 # Generate summary table.
-results.txt : $(ZIPF_SRC) isles.dat abyss.dat last.dat
+results.txt : $(ZIPF_SRC) $(DAT_FILES)
 	$(ZIPF_EXE) *.dat > $@
 
 # Count words.
