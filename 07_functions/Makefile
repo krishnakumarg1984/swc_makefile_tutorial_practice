@@ -20,7 +20,7 @@ dats : $(DAT_FILES)
 
 # Build a .dat file from the corresponding .txt file in books/
 %.dat : books/%.txt $(COUNT_SRC)
-	$(COUNT_EXE) $< $*.dat
+	$(COUNT_EXE) $< $@
 
 .PHONY : clean
 clean :
