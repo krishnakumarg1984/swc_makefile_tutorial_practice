@@ -10,7 +10,7 @@ dats : isles.dat abyss.dat last.dat
 # “In order to build a file named [something].dat (i.e. the target), find a file named books/[that same something].txt (i.e. the dependency) and run countwords.py [the dependency] [the target].”
 # The Make % wildcard can only be used in a target and in its dependencies. It cannot be used in actions.
 %.dat : books/%.txt countwords.py
-	python countwords.py $< $@
+	python countwords.py $< $*.dat
 
 .PHONY : clean
 clean :
