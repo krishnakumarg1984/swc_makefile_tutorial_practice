@@ -11,7 +11,7 @@ results.txt : $(ZIPF_SRC) $(DAT_FILES)
 .PHONY : dats
 dats : $(DAT_FILES)
 
-# Build a .dat file from the corresponding .txt file in books/
+# Build each .dat file from the corresponding .txt file in books/
 %.dat : books/%.txt $(COUNT_SRC)
 	$(COUNT_EXE) $< $@
 
