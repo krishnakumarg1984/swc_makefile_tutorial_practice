@@ -25,7 +25,7 @@ dats : $(DAT_FILES)
 pngs : $(PNG_FILES)
 
 # Build each .png file from the corresponding .dat file
-%.png : %.dat
+%.png : %.dat $(PLOT_SRC)
 	$(PLOT_EXE) $< $@
 
 #: clean       : Remove auto-generated files.
