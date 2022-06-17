@@ -4,9 +4,9 @@ TXT_FILES=$(wildcard books/*.txt)
 DAT_FILES=$(patsubst books/%.txt, %.dat, $(TXT_FILES))
 PNG_FILES=$(patsubst %.dat, %.png, $(DAT_FILES))
 
-#: all         : build the targets 'results.txt' and 'pngs'
+#: all         : build the targets 'results.txt' and the png files
 .PHONY : all
-all : results.txt pngs
+all : results.txt $(PNG_FILES)
 
 #: results.txt : Generate Zipf summary table.
 results.txt : $(ZIPF_SRC) $(DAT_FILES)
