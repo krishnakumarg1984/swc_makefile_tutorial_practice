@@ -1,5 +1,11 @@
 include config.mk
 
+TXT_FILES=$(wildcard books/*.txt)
+
+.PHONY : variables
+variables:
+	@echo TXT_FILES: $(TXT_FILES)
+
 # Generate summary table.
 results.txt : $(ZIPF_SRC) isles.dat abyss.dat last.dat
 	$(ZIPF_EXE) *.dat > $@
@@ -9,8 +15,6 @@ results.txt : $(ZIPF_SRC) isles.dat abyss.dat last.dat
 dats : isles.dat abyss.dat last.dat
 
 # Build a .dat file from the corresponding .txt file in books/
-# “In order to build a file named [something].dat (i.e. the target), find a file named books/[that same something].txt (i.e. the dependency) and run countwords.py [the dependency] [the target].”
-# The Make % wildcard can only be used in a target and in its dependencies. It cannot be used in actions.
 %.dat : books/%.txt $(COUNT_SRC)
 	$(COUNT_EXE) $< $*.dat
 
