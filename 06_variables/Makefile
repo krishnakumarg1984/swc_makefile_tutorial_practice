@@ -1,8 +1,4 @@
-LANGUAGE=python
-COUNT_SRC=countwords.py
-COUNT_EXE=$(LANGUAGE) $(COUNT_SRC)
-ZIPF_SRC=testzipf.py
-ZIPF_EXE=$(LANGUAGE) $(ZIPF_SRC)
+include config.mk
 
 # Generate summary table.
 results.txt : $(ZIPF_SRC) isles.dat abyss.dat last.dat
