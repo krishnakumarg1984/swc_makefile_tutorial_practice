@@ -1,0 +1,15 @@
+https://github.com/chadsgilbert/makefile2dot
+https://github.com/TomConlin/MakefileViz
+
+https://mcis.cs.queensu.ca/makao.html
+https://home.engineering.iastate.edu/~atamrawi/SYMake/
+
+https://stackoverflow.com/questions/4219255/how-do-you-get-the-list-of-targets-in-a-makefile/15058900#15058900
+.PHONY: list
+list:
+	@LC_ALL=C $(MAKE) -pRrq -f $(lastword $(MAKEFILE_LIST)) : 2>/dev/null | awk -v RS= -F: '/^# File/,/^# Finished Make data base/ {if ($$1 !~ "^[#.]") {print $$1}}' | sort | egrep -v -e '^[^[:alnum:]]' -e '^$@$$'
+
+https://github.com/agentzh/makefile-parser-pm
+https://metacpan.org/dist/Makefile-GraphViz/view/script/gvmake
+https://metacpan.org/pod/GraphViz::Makefile
+https://metacpan.org/dist/GraphViz-Makefile/view/scripts/tkgvizmakefile
