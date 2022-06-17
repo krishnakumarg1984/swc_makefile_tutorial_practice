@@ -16,7 +16,7 @@ results.txt : $(ZIPF_SRC) isles.dat abyss.dat last.dat
 
 # Count words.
 .PHONY : dats
-dats : isles.dat abyss.dat last.dat
+dats : $(DAT_FILES)
 
 # Build a .dat file from the corresponding .txt file in books/
 %.dat : books/%.txt $(COUNT_SRC)
@@ -24,4 +24,4 @@ dats : isles.dat abyss.dat last.dat
 
 .PHONY : clean
 clean :
-	rm -f *.dat results.txt
+	rm -f $(DAT_FILES) results.txt
