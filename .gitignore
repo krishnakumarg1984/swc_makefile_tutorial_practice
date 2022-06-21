@@ -14,3 +14,4 @@ zipf_analysis/
 !*.zip
 !.root
 !.vimrc.lua
+*.o
