@@ -1,0 +1,8 @@
+one = hello
+one ?= will not be set
+two ?= will be set
+# two := haha $(two)
+
+all:
+	@echo $(one)
+	@echo $(two)
