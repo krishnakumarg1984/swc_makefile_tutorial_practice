@@ -1,0 +1,10 @@
+.DELETE_ON_ERROR:
+all: two
+
+one:
+	touch one
+	false
+
+two: one
+	touch two
+	false
