@@ -1,0 +1,5 @@
+all:
+# @echo $(shell echo "hello")
+	# @echo $(shell ls) # Very ugly because the newlines are gone!
+# @echo $(shell "ls") # Very ugly because the newlines are gone!
+# @echo $(shell 'ls') # Very ugly because the newlines are gone!
